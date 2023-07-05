@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GOOGLE FONT -->
+
     <!-- BOOTSTRAP DEPENDENCY -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -16,9 +25,17 @@
   </head>
   <body>
     <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg bg-info py-3 text-secondary shadow-lg">
+    <nav
+      class="navbar navbar-expand-lg py-2 text-danger"
+      style="background-color: #f2f2f0"
+    >
       <div class="container">
-        <a class="navbar-brand fw-semibold fs-4" href="#">IKIAE</a>
+        <a
+          style="font-family: 'Raleway', sans-serif"
+          class="navbar-brand text-dark fw-semibold fs-4"
+          href="#"
+          >IKIAE</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -41,7 +58,7 @@
               <a class="me-5 nav-link active" href="#">Product</a>
             </li>
             <li class="nav-item">
-              <a class="me-5 nav-link active" href="#">Cart</a>
+              <a class="me-5 nav-link active" href="#">Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#">About</a>
@@ -51,6 +68,76 @@
       </div>
     </nav>
     <!-- NAVBAR END -->
+
+    <!-- HERO -->
+    <div style="background-color: #f2f2f0" class="container-fluid py-md-5 py-0">
+      <div class="mx-auto row container py-5 d-md-flex flex-wrap-reverse">
+        <div class="col-lg my-auto ps-0 py-5">
+          <p class="h1 md-h4 mb-4 fw-semibold">
+            We design and build better chairs, for a better life
+          </p>
+          <p class="mb-4">
+            In a small shop in the heart of Cikarang, we spend our days
+            relentlessly perfecting the chair. The result is a perfect blend of
+            beauty and comfort, that will have a lasting impact on your health.
+          </p>
+          <a href="#" class="btn px-4 btn-success rounded-pill me-1"
+            >Shop now</a
+          >
+          <a href="#" class="btn px-4 btn-outline-primary rounded-pill"
+            >Explore</a
+          >
+        </div>
+        <div class="col-lg-7 my-auto pe-0 py-5">
+          <img
+            class="img-fluid w-100 my-auto"
+            src="img/background-transparent.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- HERO -->
+
+    <!-- PRODUCT -->
+    <div class="container py-5 d-flex justify-content-evenly">
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <!-- PRODUCT -->
 
     <!-- BOOSTRAP DEPENDENCY -->
     <script
