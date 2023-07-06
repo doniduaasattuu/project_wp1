@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/svg+xml" href="img/exclude.svg" />
     <!-- GOOGLE FONT -->
 
     <!-- BOOTSTRAP DEPENDENCY -->
@@ -91,7 +92,9 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="#">Cart</a>
+              <a class="nav-link active" href="#"
+                >Cart <span id="notif" class="badge bg-danger"></span
+              ></a>
             </li>
           </ul>
         </div>
@@ -326,14 +329,16 @@
                           d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
                         />
                       </svg>
-                      <span>Weight 16 Kg.</span>
+                      <span>Weight 12 Kg.</span>
                     </li>
                   </ul>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-secondary">
+                    <button
+                      class="add_to_cart btn btn-sm btn-outline-secondary"
+                    >
                       <svg
                         class="mb-1 me-1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -457,14 +462,16 @@
                           d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
                         />
                       </svg>
-                      <span>Weight 22 Kg.</span>
+                      <span>Weight 18 Kg.</span>
                     </li>
                   </ul>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-secondary">
+                    <button
+                      class="add_to_cart btn btn-sm btn-outline-secondary"
+                    >
                       <svg
                         class="mb-1 me-1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -588,14 +595,16 @@
                           d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
                         />
                       </svg>
-                      <span>Weight 80 Kg.</span>
+                      <span>Weight 56 Kg.</span>
                     </li>
                   </ul>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-secondary">
+                    <button
+                      class="add_to_cart btn btn-sm btn-outline-secondary"
+                    >
                       <svg
                         class="mb-1 me-1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -654,7 +663,7 @@
 
         <h1 class="fw-bold mb-2">460 IKIAE stores in 62 markets</h1>
         <p class="mb-5">Updated: June 2023</p>
-        <img class="img img-fluid" src="img/stores.png" alt="" />
+        <img class="img img-fluid w-100 pb-5" src="img/stores.png" alt="" />
       </div>
     </div>
     <!-- ABOUT END -->
@@ -663,31 +672,56 @@
     <div style="max-width: 768px" id="contact" class="container-fluid pt-5">
       <div class="container mw-md pt-5 mx-auto">
         <h2 class="fw-bold mb-5 text-center">Contact</h2>
-        <form>
+        <form class="pb-5" method="post" action="message_handler.php">
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
+            <label for="exampleInputEmail1" class="form-label">Email</label>
             <input
               type="email"
               class="form-control"
+              name="exampleInputEmail1"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
           </div>
+
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
+            <label for="exampleInputFullname" class="form-label"
               >Fullname</label
             >
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
+              id="exampleInputFullname"
+              name="exampleInputFullname"
             />
           </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPhoneNumber" class="form-label"
+              >Phone Number</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="exampleInputPhoneNumber"
+              id="exampleInputPhoneNumber"
+              aria-describedby="emailHelp"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputAddress" class="form-label">Address</label>
+            <textarea
+              type="text"
+              class="form-control"
+              name="exampleInputAddress"
+              id="exampleInputAddress"
+              aria-describedby="emailHelp"
+            ></textarea>
+          </div>
+
           <div class="mb-3">
             <label for="exampleInputMessage" class="form-label">Message</label>
-            <!-- <input type="text" class="form-control" id="exampleInputMessage" /> -->
             <textarea
               name="exampleInputMessage"
               id="exampleInputMessage"
@@ -698,7 +732,7 @@
             ></textarea>
           </div>
           <button type="submit" class="btn btn-success text-center">
-            Submit
+            Send
           </button>
         </form>
       </div>
@@ -717,7 +751,7 @@
           >
           </a>
           <span class="text-body-secondary text-center"
-            >&copy;2023 | Kelompok 4 19.2B.24 | UBSI</span
+            >&copy;2023 | Kelompok 2 19.2B.24 | UBSI</span
           >
         </div>
 
@@ -790,6 +824,17 @@
           document.getElementsByTagName("nav")[0].classList.add("shadow");
         }
       };
+
+      // NOTIF FUNCTION
+      let notif = document.getElementById("notif");
+      let add_to_cart = document.getElementsByClassName("add_to_cart");
+      console.info(add_to_cart.length);
+
+      for (let i = 0; i < add_to_cart.length; i++) {
+        add_to_cart[i].onclick = () => {
+          notif.textContent = Number(notif.textContent) + 1;
+        };
+      }
     </script>
   </body>
 </html>
